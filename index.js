@@ -52,7 +52,8 @@ async function fetchInfo(){
     //update document
     const user  = await User.findById('6308af87da8015c71b328259')
     user.isMarried = false
-    await user.save()
+    await user.save() 
+    
         // console.log(users)
 }
 
