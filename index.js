@@ -49,12 +49,28 @@ async function fetchInfo(){
     // .and()
 
     
-    //update document
-    const user  = await User.findById('6308af87da8015c71b328259')
-    user.isMarried = false
-    await user.save() 
+    //update document1
+    //const user  = await User.findById('6308af87da8015c71b328259')
+    //user.isMarried = false
+    //await user.save() 
+
+     //update document2
+     //const user  = await User.findByIdAndUpdate('6308af87da8015c71b328259', {age: 45, isMarried: true}, {new: true, runValidators: true})
     
-        // console.log(users)
+    //Delete document in 3 ways
+
+    //Method 1 - To delete one document
+   // await User.deleteOne({_id: '6308b7e5bc11319cd5b4c2e7'})
+   // await User.FindByIdAndDelete('6308b7e5bc11319cd5b4c2e7')
+    
+
+   //Method 2 - To delete more than one document that meets the delete condition
+   await User.deleteMany({isMarried: false})
+
+     
+     // console.log(users)
+
+
 }
 
 fetchInfo()
